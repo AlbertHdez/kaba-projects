@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 
+import HeaderCard from './components/HeaderCard'
+
 const Container = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -10,7 +12,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <h1>Desde Lab</h1>
+      <HeaderCard/>
     </Container>
   );
 }

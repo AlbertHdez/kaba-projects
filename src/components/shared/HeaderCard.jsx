@@ -5,6 +5,9 @@ import styled from 'styled-components'
 //Components
 import Button from './Button'
 import IconLink from './IconLink'
+import facebookIcon from '@iconify/icons-mdi/facebook'
+import facebookMessenger from '@iconify/icons-mdi/facebook-messenger'
+import whatsappIcon from '@iconify/icons-mdi/whatsapp'
 //Helpers
 
 //Hooks
@@ -61,6 +64,7 @@ const HeaderCard = () =>{
       line-height: 60px;
       text-align: center;
       text-shadow: 0 0 5px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
     }
   `
   const SSocial = styled.div`
@@ -97,12 +101,12 @@ const HeaderCard = () =>{
           <h1>
             Convirtiendo ideas en realidad
           </h1>
-          <Button text="Contactanos"/>
+          <Button text="Contactanos" shadow="true"/>
         </SHeader>
         <SSocial>
-          <IconLink color="white"/>
-          <IconLink color="white"/>
-          <IconLink color="white"/>
+          <IconLink color="white" icon={facebookIcon}/>
+          <IconLink color="white" icon={facebookMessenger}/>
+          <IconLink color="white" icon={whatsappIcon}/>
         </SSocial>
         <SAuthor>
           <span>Pon los creditos del autor wey</span>

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 //Components
-
+import Button from './Button'
+import IconLink from './IconLink'
 //Helpers
 
 //Hooks
@@ -48,6 +49,7 @@ const HeaderCard = () =>{
   const SHeader =  styled.div`
     grid-area: Header;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -69,6 +71,11 @@ const HeaderCard = () =>{
 
     & > * {
       color: white;
+      margin-right: 10px;
+    }
+
+    & > *:nth-last-child(1){
+      margin-right: 0px;
     }
   `
   const SAuthor = styled.div`
@@ -90,9 +97,12 @@ const HeaderCard = () =>{
           <h1>
             Convirtiendo ideas en realidad
           </h1>
+          <Button text="Contactanos"/>
         </SHeader>
         <SSocial>
-          <span>Links sociales</span>
+          <IconLink color="white"/>
+          <IconLink color="white"/>
+          <IconLink color="white"/>
         </SSocial>
         <SAuthor>
           <span>Pon los creditos del autor wey</span>

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import HeaderCard from './components/HeaderCard'
+import HeaderCard from './components/shared/HeaderCard'
 
 const Container = styled.div`
   width: 100%;

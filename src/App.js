@@ -12,7 +12,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <Button text="Vamos a comenzar"/>
+      <Button text="Vamos a comenzar" shadow={true}/>
     </Container>
   );
 }

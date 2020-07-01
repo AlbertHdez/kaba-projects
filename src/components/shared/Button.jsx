@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 
-const Button = ({text, shadow = false, size='fit', theme="dark"}) => {
+const Button = ({text, shadow, size, theme}) => {
 
 	const Container = styled.button`
-		width: ${size === "fit" ? "auto" : size === "stretch" ? "100%" : "none"};
-		padding: ${size === "fit" ? "10px 15px" : size === "stretch" ? "10px 0px" : "none"};
+		width: ${size === "small" || size === "large" ? "auto" : size === "stretch" ? "100%" : "none"};
+		padding: ${size === "small" ? "10px 15px": size==="large" ? "12px 40px" : size === "stretch" ? "10px 0px" : "none"};
 		text-align: center;
 		font-size: 16px;
 		font-weight: 500;
@@ -28,6 +28,20 @@ const Button = ({text, shadow = false, size='fit', theme="dark"}) => {
     	{text}
     </Container>
   )
+}
+
+Button.defaultProps = {
+	text: "Lorem ipsum",
+	shadow: false,
+	size: "large",
+	theme: "dark"
+}
+
+Button.propTypes = {
+	text: PropTypes.string,
+	shadow: PropTypes.bool,
+	size: PropTypes.string,
+	theme: PropTypes.string
 }
 
 export default Button

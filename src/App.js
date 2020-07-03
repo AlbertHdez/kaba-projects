@@ -1,5 +1,8 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
+
+import HowWeWork from './components/Home/HowWeWork'
+import worldMap from '@iconify/icons-emojione-monotone/world-map'
 
 const Container = styled.div`
   width: 100%;
@@ -13,7 +16,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <h1>Desde Lab</h1>
+      <HowWeWork icon={worldMap}/>
     </Container>
   );
 }

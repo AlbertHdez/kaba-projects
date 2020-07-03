@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
 
-const Button = ({text, shadow, size, theme}) => {
+const Button = ({text, shadow, size, theme, link}) => {
 
-	const Container = styled.button`
+	const SContainer = css`
 		width: ${size === "small" || size === "large" ? "auto" : size === "stretch" ? "100%" : "none"};
 		padding: ${size === "small" ? "10px 15px": size==="large" ? "12px 40px" : size === "stretch" ? "10px 0px" : "none"};
 		text-align: center;
@@ -22,12 +22,20 @@ const Button = ({text, shadow, size, theme}) => {
 			box-shadow: ${shadow ? '0 1px 2px rgba(0,0,0,0.3)': 'none'};	
 		}
 	`
+	const SLink = styled.a`
+		${SContainer}
+		display: inline-block;
+		text-decoration: none;
+	`
+	const SButton = styled.button`
+		${SContainer}
+	`
 
-  return (
-    <Container>
-    	{text}
-    </Container>
-  )
+	if (link){
+		return <SLink href={link}>{text}</SLink>
+	}else{
+		return <SButton>{text}</SButton>
+	}
 }
 
 Button.defaultProps = {
@@ -41,7 +49,8 @@ Button.propTypes = {
 	text: PropTypes.string,
 	shadow: PropTypes.bool,
 	size: PropTypes.string,
-	theme: PropTypes.string
+	theme: PropTypes.string,
+	link: PropTypes.string
 }
 
 export default Button

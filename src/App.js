@@ -12,7 +12,13 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <HeaderCard/>
+      <HeaderCard 
+      	title="Convirtiendo idea en realidad" 
+      	button={{
+      	      		text: "Contactanos",
+      	      		link: "https://facebook.com"
+      	      		}}
+      />
     </Container>
   );
 }

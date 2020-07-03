@@ -15,7 +15,7 @@ import whatsappIcon from '@iconify/icons-mdi/whatsapp'
 //Media
 
 
-const HeaderCard = () =>{
+const HeaderCard = ({title, socialLinks, button}) =>{
 
   //Styles
   const SContainer = styled.div`
@@ -99,14 +99,20 @@ const HeaderCard = () =>{
       <SWrapper>
         <SHeader>
           <h1>
-            Convirtiendo ideas en realidad
+            {title}
           </h1>
-          <Button text="Contactanos" shadow="true"/>
+          {
+            button ? 
+              <Button text={button.text} shadow="true" link={button.link}/>
+            : null
+          }
         </SHeader>
         <SSocial>
-          <IconLink color="white" icon={facebookIcon}/>
-          <IconLink color="white" icon={facebookMessenger}/>
-          <IconLink color="white" icon={whatsappIcon}/>
+          {
+            socialLinks.map(link => (
+              <IconLink color="white" icon={link.icon} link={link.href}/>
+              ))
+          }
         </SSocial>
         <SAuthor>
           <span>Pon los creditos del autor wey</span>
@@ -117,7 +123,17 @@ const HeaderCard = () =>{
 }
 //PropTypes of HeaderCard
 HeaderCard.propType = {
-    //prop: PropTypes.type.value
+    title: PropTypes.string.isRequired,
+    socialLinks: PropTypes.array
+}
+
+HeaderCard.defaultProps = {
+  socialLinks:[
+    {
+      icon: facebookIcon,
+      href: "https://facebook.com"
+    }
+  ]
 }
 
 export default HeaderCard

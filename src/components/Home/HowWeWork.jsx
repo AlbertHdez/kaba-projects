@@ -1,17 +1,28 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import PropTypes from 'prop-types'
 
 import { Icon } from '@iconify/react'
 import earthMinus from '@iconify/icons-mdi/earth-minus'
 
-const HowWeWork = ({icon}) => {
+const HowWeWork = ({icon, version, title, text}) => {
 
-	const SContainer = styled.div`
+	const SMobile = css`
+		min-width: 280px;
+		grid-template-columns: 90px auto;
+		grid-template-areas: "Icon Article";
+		column-gap: 22px;
+		align-items: center;
+	`
+
+	const SDesktop = css`
 		width: 200px;
-		display: grid;
 		row-gap: 14px;
 		justify-items: center;
+	`
+	const SContainer = styled.div`
+		display: grid;
+		${version === "mobile" ? SMobile : version === "desktop" ? SDesktop : null}
 	`
 	const SIconWrapper = styled.div`
 		width: 90px;
@@ -29,8 +40,8 @@ const HowWeWork = ({icon}) => {
 	`
 	const SArticle = styled.article`
 		display: grid;
-		justify-items: center;
-		text-align: center;
+		justify-items: ${version === "mobile" ? "start" : version === "desktop" ? "center" : null};
+		text-align: ${version === "mobile" ? "left" : version === "desktop" ? "center" : null};
 
 		& > h4 {
 			font-size: 16px;
@@ -48,19 +59,23 @@ const HowWeWork = ({icon}) => {
 				<SIcon icon={icon}/>
 			</SIconWrapper>
 			<SArticle>
-				<h4>Trabajos Remotos</h4>
-				<p>No tenemos fronteras para estar a tu servicio</p>
+				<h4>{title}</h4>
+				<p>{text}</p>
 			</SArticle>
 		</SContainer>
 	)
 }
 
 HowWeWork.defaultProps = {
-	icon: earthMinus
+	icon: earthMinus,
+	version: "desktop"
 }
 
 HowWeWork.propTypes = {
-	icon: PropTypes.object
+	icon: PropTypes.object,
+	version: PropTypes.string,
+	text: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired
 }
 
 export default HowWeWork;

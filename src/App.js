@@ -16,7 +16,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <HowWeWork icon={worldMap}/>
+      <HowWeWork icon={worldMap} version={"mobile"} title={"A title"} text="Just a simple text"/>
     </Container>
   );
 }

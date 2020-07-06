@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Button from './Button'
+
 const CTAImage = () => {
 
 	const SContainer = styled.div`
@@ -33,7 +35,8 @@ const CTAImage = () => {
 		& > p {
 			font-size: 16px;
 			text-align: left;
-			line-height: 24px
+			line-height: 24px;
+			margin-bottom: 12px;
 		}
 	`
 
@@ -47,6 +50,7 @@ const CTAImage = () => {
 					<p>
 						Contactanos para hablar y comenzar con tu proyecto
 					</p>
+					<Button size={"small"} link={"https://facebook.com"}/>
 				</SContent>
 			</SWrapper>
 		</SContainer>

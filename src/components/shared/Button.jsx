@@ -6,7 +6,7 @@ import styled, {css} from 'styled-components'
 const Button = ({text, shadow, size, theme, link}) => {
 
 	const SContainer = css`
-		width: ${size === "small" || size === "large" ? "auto" : size === "stretch" ? "100%" : "none"};
+		width: ${size === "small" || size === "large" ? "fit-content" : size === "stretch" ? "100%" : "none"};
 		padding: ${size === "small" ? "10px 15px": size==="large" ? "12px 40px" : size === "stretch" ? "10px 0px" : "none"};
 		text-align: center;
 		font-size: 16px;

@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Quote from './components/Home/Quote'
+
 import theme from './themes/ClassicDark'
 const {palette} = theme;
 
@@ -17,7 +19,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <h1>Desde Lab</h1>
+      <Quote/>
     </Container>
   );
 }

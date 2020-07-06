@@ -38,4 +38,4 @@ const theme =
 	},
 }
 
-export deafult theme
+export default theme

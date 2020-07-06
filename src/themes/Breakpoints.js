@@ -6,5 +6,4 @@ const breakpoints = {
 	mobileM: "375px",
 	mobileS: "320px"  
 }
-
 export default breakpoints

@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 import Button from './Button'
 
 //themes
 import theme from '../../themes/ClassicDark'
 import breakpoints from '../../themes/Breakpoints'
+
+const {palette, font} = theme;
+const {subtitle, text} = font;
 
 const CTAImage = ({img, title, text, button}) => {
 
@@ -17,7 +21,7 @@ const CTAImage = ({img, title, text, button}) => {
 		background-image: url(${img});
 		background-size: cover;
 		overflow: hidden;
-		box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 0 6px ${palette.boxShadow};
 	`
 	const SWrapper = styled.div`
 		width: 100%;
@@ -26,9 +30,9 @@ const CTAImage = ({img, title, text, button}) => {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-areas: ". CTA CTA .";
-		background-color:  rgba(0,0,0,0.3);
+		background-color:  ${palette.shadow};
 
-		@media (max-width: 768px) {
+		@media (max-width: ${breakpoints.tablet}) {
 			grid-template-columns: 24px 1fr 1fr 24px;
 		}
 	`
@@ -42,18 +46,19 @@ const CTAImage = ({img, title, text, button}) => {
 
 		& > *{
 			text-align: center;
-			color: white;
+			color: ${palette.text};
 		}
 
 		& > h2 {
-			font-size:24px;
-			line-height: 36px;
+			font-size:${subtitle.size};
+			line-height: ${subtitle.lineHeight};
+			font-weight: ${subtitle.weight};
 			margin-bottom: 7px;
 		}
 
 		& > p {
-			font-size: 16px;
-			line-height: 24px;
+			font-size: ${text.size};
+			line-height: ${text.lineHeight};
 			margin-bottom: 12px;
 		}
 	`
@@ -89,4 +94,10 @@ CTAImage.defaultProps = {
 	img: "https://picsum.photos/1100/350"
 }
 
+CTAImage.propTypes = {
+	title: PropTypes.string,
+	text: PropTypes.string,
+	button: PropTypes.object,
+	img: PropTypes.string
+}
 export default CTAImage

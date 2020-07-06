@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 import Button from './Button'
 
+//themes
+import theme from '../../themes/ClassicDark'
+import breakpoints from '../../themes/Breakpoints'
+
 const CTAImage = ({img, title, text, button}) => {
 
 	const SContainer = styled.div`

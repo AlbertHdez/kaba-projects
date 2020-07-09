@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 import theme from './themes/ClassicDark'
-const {palette} = theme;
-
+const {palette} = theme
 
 
 const Container = styled.div`

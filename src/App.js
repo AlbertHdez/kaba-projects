@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import ServiceItem from './components/Home/ServiceItem'
+
 import theme from './themes/ClassicDark'
 const {palette} = theme;
 
@@ -17,7 +19,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <h1>Desde Lab</h1>
+      <ServiceItem/>
     </Container>
   );
 }

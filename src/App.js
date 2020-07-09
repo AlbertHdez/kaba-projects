@@ -5,6 +5,8 @@ import theme from './themes/ClassicDark'
 const {palette} = theme;
 
 
+import HeaderCard from './components/shared/HeaderCard'
+
 const Container = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -18,6 +20,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
+
     </Container>
   );
 }

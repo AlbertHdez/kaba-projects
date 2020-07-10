@@ -2,12 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Icon, InlineIcon } from '@iconify/react'
-import briefcaseIcon from '@iconify/icons-twemoji/briefcase'
+
+import earthMinus from '@iconify/icons-mdi/earth-minus'
 
 import theme from '../../themes/ClassicDark'
-const {palette, font} = theme;
 
-const ServiceItem = props => {
+
+const ServiceItem = ({title, text, icon}) => {
+
+	const {palette, font} = theme;
 
 	const SContainer = styled.article`
 		max-width: 250px;
@@ -30,19 +33,27 @@ const ServiceItem = props => {
 
 	return (
 		<SContainer>
-			<SIcon icon={briefcaseIcon}/>
+			<SIcon icon={icon}/>
 			<STitle>
-				Tarjetas Web
+				{title}
 			</STitle>
 			<SDescription>
-				Preséntate ante los demás con una web que tenga un resumen de ti, y no te compliques con tarjetas o blogs que son innecesarios.
+				{text}
 			</SDescription>
 		</SContainer>
 	)
 }
 
-ServiceItem.propTypes = {
+ServiceItem.defaultProps = {
+	icon: earthMinus,
+	title: "Title",
+	text: "Description"
+}
 
+ServiceItem.propTypes = {
+	icon: PropTypes.object,
+	title: PropTypes.string,
+	text: PropTypes.string
 }
 
 export default ServiceItem

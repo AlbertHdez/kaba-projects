@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import ServiceItem from './components/Home/ServiceItem'
+
+
+import briefcaseIcon from '@iconify/icons-twemoji/briefcase'
 import theme from './themes/ClassicDark'
 const {palette} = theme
 
@@ -19,7 +23,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-
+        <ServiceItem />
     </Container>
   );
 }

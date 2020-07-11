@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import theme from '../../themes/ClassicDark'
 
 //Components
 import Button from './Button'
@@ -24,6 +25,7 @@ const HeaderCard = ({title, socialLinks, button}) =>{
       border-radius: 15px;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 3px 6px ${theme.palette.boxShadow};
   `
   const SImageBg = styled.img`
     width: 120%;

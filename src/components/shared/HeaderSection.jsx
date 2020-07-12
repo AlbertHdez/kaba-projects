@@ -1,10 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const HeaderSection = ({align}) => {
+import theme from '../../themes/ClassicDark'
+
+const HeaderSection = ({align, titles, section, ...props}) => {
+
+	const {font, palette} = theme
 
 	const SContainer = styled.article`
-		max-width: ${align === "center" ? "600px" : align === "left" ? "350px": "none"};
+		max-width: ${align === "center" ? "700px" : align === "left" ? "350px": "none"};
 		display: grid;
 		row-gap: 12px;
 		justify-items: ${align === "center" ? "center" : align === "left" ? "start": "none"};
@@ -15,39 +19,48 @@ const HeaderSection = ({align}) => {
 	`
 	const SChip = styled.p`
 		width: fit-content;
+		height: fit-content;
 		padding: 4px 8px;
-		background-color: #9D0FC7;
-		font-size: 12px;
+		background-color: ${palette.primary};
+		font-size: ${font.details.size};
 		font-weight: 500;
-		color: white;
+		color: ${palette.text};
 		border-radius: 5px;
+		box-shadow: 0 1px 2px ${palette.boxShadow};
 	`
 	const STitle = styled.h2`
-		font-size: 24px;
-		font-weight: 600;
+		font-size: ${font.subtitle.size};
+		font-weight: ${font.subtitle.weight};
+		color: ${palette.text}
 	`
 	const SContent = styled.div`
 		display: grid;
 		row-gap: 20px;
-		& > p {font-size: 16px;}
+		& > p {
+			font-size: ${font.subtext.size};
+			color: ${palette.text}
+		}
 	`
 
   return (
     <SContainer>
-    	<SChip>Sobre nosotros</SChip>
-    	<STitle>¿Cómo trabajamos en KABA?</STitle>
+    	<SChip>{section}</SChip>
+    	<STitle>
+    		{
+    			titles.map(title => <React.Fragment>{title}<br/></React.Fragment>)
+    		}
+    	</STitle>
     	<SContent>
-    		<p>KABA es un proyecto iniciado para volver ideas del equipo y de nuestro clientes en cosas reales.
-Lo que hacemos en KABA es el desarrollo de productos y servicios usando tecnología web.
-</p>
-			<p>Esto lo hacemos para proveer soluciones a problemas actuales que enfrentan nuestros clientes y  la población en general.</p>
+    		{props.children || (<p>children is here</p>)}
     	</SContent>
     </SContainer>
   )
 }
 
 HeaderSection.defaultProps = {
-	align: "center"
+	align: "center",
+	titles: ["title"],
+	section: "section"
 }
 
 export default HeaderSection;

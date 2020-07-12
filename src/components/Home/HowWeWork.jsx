@@ -5,7 +5,11 @@ import PropTypes from 'prop-types'
 import { Icon } from '@iconify/react'
 import earthMinus from '@iconify/icons-mdi/earth-minus'
 
+import theme from '../../themes/ClassicDark'
+
 const HowWeWork = ({icon, version, title, text}) => {
+
+	const {palette, font} = theme
 
 	const SMobile = css`
 		min-width: 280px;
@@ -32,8 +36,8 @@ const HowWeWork = ({icon, version, title, text}) => {
 		align-items: center;
 		background-color: #9D0FC7;
 		border-radius: 10px;
+		box-shadow: 0 2px 4px ${palette.boxShadow};
 	`
-
 	const SIcon = styled(Icon)`
 		font-size: 60px;
 		color: white;
@@ -42,14 +46,15 @@ const HowWeWork = ({icon, version, title, text}) => {
 		display: grid;
 		justify-items: ${version === "mobile" ? "start" : version === "desktop" ? "center" : null};
 		text-align: ${version === "mobile" ? "left" : version === "desktop" ? "center" : null};
+		color: ${palette.text};
 
 		& > h4 {
-			font-size: 16px;
+			font-size: ${font.text.size};
 			font-weight: 600;
 		}
 
 		& > p {
-			font-size: 14px;
+			font-size: ${font.subtext.size};
 		}
 	`
 

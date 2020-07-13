@@ -10,6 +10,7 @@ import HeaderCard from '../components/shared/HeaderCard'
 import HeaderSection from '../components/shared/HeaderSection'
 import HowWeWork from '../components/Home/HowWeWork'
 import ImageSection from '../components/shared/ImageSection'
+import ServiceItem from '../components/Home/ServiceItem'
 
 //Media
 import { Icon, InlineIcon } from '@iconify/react'
@@ -74,6 +75,24 @@ const Home = props => {
 		align-items: center;
 		justify-content: center;
 	`
+	const SServices = styled.section`
+		width: 100%;
+		display: grid;
+		row-gap: 50px;
+		justify-content: center;
+
+		background-color: ${palette.containerLight};
+		border-radius: 20px;
+		box-shadow: 0 3px 6px ${palette.boxShadow};
+		padding: 120px 0px;
+
+		& > *:nth-child(2){
+			display: grid;
+			grid-template-columns: repeat(3, 250px);
+			column-gap: 20px;
+			justify-content: center;
+		}
+	`
 
 	return (
 		<SContainer>
@@ -119,16 +138,25 @@ const Home = props => {
 					<HeaderSection 
 						titles={["¿Qué es KABA?","¿Que es lo que hacemos?","¿Por qué lo hacemos?"]}
 						section={"Sobre Nosotros"}
-						align= {"left"}
-					>
+						align= {"left"}>
 						<p>KABA es un proyecto iniciado para volver ideas del equipo y de nuestro clientes en cosas reales.
-Lo que hacemos en KABA es el desarrollo de productos y servicios usando tecnología web.
-</p>
-<p>
-	Esto lo hacemos para proveer soluciones a problemas actuales que enfrentan nuestros clientes y  la población en general.
-</p>
+							Lo que hacemos en KABA es el desarrollo de productos y servicios usando tecnología web.
+						</p>
+						<p>
+							Esto lo hacemos para proveer soluciones a problemas actuales que enfrentan nuestros clientes y  la población en general.
+						</p>
 					</HeaderSection>
 				</SWhatWeDo>
+				<SServices>
+					<HeaderSection>
+						
+					</HeaderSection>
+					<section>
+						<ServiceItem/>
+						<ServiceItem/>
+						<ServiceItem/>
+					</section>
+				</SServices>
 			</SWrapper>
 		</SContainer>
 	)

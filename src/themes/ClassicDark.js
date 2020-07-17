@@ -6,7 +6,7 @@ const theme =
 		containerDark: "#18191A",
 		containerLight: "#242526",
 		shadow: "rgba(0, 0, 0, 0.3)",
-		textShadow: "rgba(0, 0, 0, 0.2",
+		textShadow: "rgba(0, 0, 0, 0.2)",
 		boxShadow: "rgba(0, 0, 0, 0.3)"
 	},
 	font: {

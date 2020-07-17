@@ -7,7 +7,7 @@ const ImageSection = ({src, isFull}) => {
 
 	const SContainer = styled.div`
 		width: ${isFull ? "100%" : "350px"};
-		height: 400px;
+		height: ${isFull ? "100%" : "450px"};
 		background-image: url(${src});
 		background-position: center;
 		background-size: cover;

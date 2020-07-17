@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import theme from '../../../themes/ClassicDark'
 
 //Components
+import HeaderCover from '../../../components/shared/HeaderCover'
 import HeaderSection from '../../../components/shared/HeaderSection'
 import HowWeWork from '../../../components/Home/HowWeWork'
 import ImageSection from '../../../components/shared/ImageSection'
@@ -33,12 +34,10 @@ const Mobile = props => {
 		width: 100%;
 		height: fit-content;
 		background-color: ${palette.containerDark};
-		
 	`
 
 	const SHeader = styled.header`
 		height: calc(100vh + 30px);
-		background-color: pink;
 	`
 	const SHowWeWork = styled.section`
 		margin: 70px 0px;
@@ -56,6 +55,10 @@ const Mobile = props => {
 		display: grid;
 		row-gap: 50px;
 		margin: 100px 0;
+
+		& > *:nth-child(1){
+			height: 100vh;
+		}
 
 		& > *:nth-child(2){
 			padding: 0 36px;
@@ -90,7 +93,31 @@ const Mobile = props => {
 	return (
 		<SContainer>
 			<SHeader>
-				Header
+				<HeaderCover
+					title={"Convirtiendo ideas en realidad"}
+					button={{
+						text: "Contactanos",
+						link: "https://facebook.com"
+						}}
+					socialLinks = {[
+						{
+							href: "https://www.facebook.com/MarioHdezDev",
+							icon: facebookIcon
+						},
+						{
+							href: "https://twitter.com/MarioHdezDev",
+							icon: twitterIcon
+						},
+						{
+							href: "https://www.instagram.com/mariohdezdev",
+							icon: instagramIcon
+						},
+						{
+							href: "https://www.linkedin.com/in/marioahdezn",
+							icon: linkedinIcon
+						}
+					]}
+				/>
 			</SHeader>
 			<SHowWeWork>
 				<HeaderSection 

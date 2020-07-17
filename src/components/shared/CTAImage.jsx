@@ -11,12 +11,12 @@ import breakpoints from '../../themes/Breakpoints'
 const {palette, font} = theme;
 const {subtitle, text} = font;
 
-const CTAImage = ({img, title, text, button}) => {
+const CTAImage = ({img, title, text, button, isMobile}) => {
 
 	const SContainer = styled.div`
 		width: 100%;
-		height: 350px;
-		border-radius: 20px;
+		height: ${isMobile ? "100%" : "350px"};
+		border-radius: 15px;
 		position: relative;
 		background-image: url(${img});
 		background-size: cover;
@@ -91,13 +91,15 @@ CTAImage.defaultProps = {
 		text: "Aquí va el button.text",
 		link: "http://Aqui+va+el+link.com" 
 	},
-	img: "https://picsum.photos/1100/350"
+	img: "https://picsum.photos/1100/350",
+	isMobile: false
 }
 
 CTAImage.propTypes = {
 	title: PropTypes.string,
 	text: PropTypes.string,
 	button: PropTypes.object,
-	img: PropTypes.string
+	img: PropTypes.string,
+	isMobile: PropTypes.bool
 }
 export default CTAImage

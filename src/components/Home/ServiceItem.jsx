@@ -13,22 +13,23 @@ const ServiceItem = ({title, text, icon}) => {
 	const {palette, font} = theme;
 
 	const SContainer = styled.article`
-		max-width: 250px;
 		width: 100%;
 		display: grid;
 		row-gap: 12px;
 	`
 	const SIcon = styled(Icon)`
-		font-size: ${font.subtitle.size};
+		font-size: 32px;
 	`
 	const STitle = styled.h4`
 		font-size: ${font.text.size};
 		font-weight: 500;
 		line-height: ${font.text.lineHeight};
+		color: ${palette.text};		
 	`
 	const SDescription = styled.p`
 		font-size: ${font.subtext.size};
 		line-height: ${font.subtext.lineHeight};
+		color: ${palette.text};		
 	`
 
 	return (

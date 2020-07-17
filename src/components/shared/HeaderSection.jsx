@@ -8,7 +8,7 @@ const HeaderSection = ({align, titles, section, ...props}) => {
 	const {font, palette} = theme
 
 	const SContainer = styled.article`
-		max-width: ${align === "center" ? "700px" : align === "left" ? "350px": "none"};
+		max-width: ${align === "center" ? "700px" : align === "left" ? "auto": "none"};
 		display: grid;
 		row-gap: 12px;
 		justify-items: ${align === "center" ? "center" : align === "left" ? "start": "none"};

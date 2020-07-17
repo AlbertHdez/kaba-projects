@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 //Pages
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 
 function App() {
   return (

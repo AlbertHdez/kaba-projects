@@ -12,6 +12,8 @@ import CTAImage from '../../../components/shared/CTAImage'
 import ServiceItem from '../../../components/Home/ServiceItem'
 import Quote from '../../../components/Home/Quote'
 import Footer from '../../../components/shared/Footer'
+import Modal from '../../../components/shared/Modal'
+import MenuPop from '../../../components/shared/MenuPop'
 
 //Media
 import { Icon, InlineIcon } from '@iconify/react'
@@ -27,7 +29,7 @@ import linkedinIcon from '@iconify/icons-mdi/linkedin'
 import twitterIcon from '@iconify/icons-mdi/twitter'
 import instagramIcon from '@iconify/icons-mdi/instagram'
 
-const Mobile = props => {
+const Mobile = ({modal}) => {
 	const {palette, font} = theme
 
 	const SContainer = styled.section`
@@ -117,6 +119,7 @@ const Mobile = props => {
 							icon: linkedinIcon
 						}
 					]}
+					handleMenuClick={modal.toggle}
 				/>
 			</SHeader>
 			<SHowWeWork>
@@ -229,6 +232,10 @@ const Mobile = props => {
 						]}
 					/>
 			</SFooter>
+
+			<Modal isOpened={modal.isOpened} toggle={modal.toggle}>
+				<MenuPop/>
+			</Modal>
 		</SContainer>
 	)
 }

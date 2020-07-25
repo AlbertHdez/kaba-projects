@@ -7,7 +7,7 @@ import MobileContainer from './Versions/MobileContainer'
 const Home = props => {
 
 	return(
-		<MobileContainer/>
+		<DesktopContainer/>
 	)
 }
 

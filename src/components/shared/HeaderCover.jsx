@@ -7,7 +7,7 @@ import IconLink from './IconLink'
 import Navbar from './Navbar'
 import Button from './Button'
 
-const HeaderCover = ({title, socialLinks, button}) => {
+const HeaderCover = ({title, socialLinks, button, handleMenuClick}) => {
 
 	const {palette, font} = theme;
 
@@ -83,7 +83,7 @@ const HeaderCover = ({title, socialLinks, button}) => {
 	return (
 		<SContainer>
 			<SWrapper>
-			<SNavbar>
+			<SNavbar handleOnClick={handleMenuClick}>
 				<Navbar/>
 			</SNavbar>
 			<STitle>

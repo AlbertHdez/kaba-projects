@@ -9,7 +9,7 @@ import menuIcon from '@iconify/icons-mdi/menu'
 import theme from '../../themes/ClassicDark'
 import breakpoints from '../../themes/Breakpoints'
 
-const Navbar = props => {
+const Navbar = ({handleOnClick}) => {
 
 	const {font, palette} = theme
 
@@ -83,7 +83,7 @@ const Navbar = props => {
 					Contacto
 				</SLink>
 			</SLinks>
-			<SIcon icon={menuIcon}/>
+			<SIcon icon={menuIcon} onClick={handleOnClick}/>
 		</SContainer>
 	)
 }

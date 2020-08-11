@@ -64,8 +64,8 @@ const MenuPop = props => {
 		<SContainer>
 			<STitle>Menú</STitle>
 			<SLinks>
-				<SLink>Inicio</SLink>
-				<SLink>Portafolio</SLink>
+				<SLink to="/">Inicio</SLink>
+				<SLink to="/Portfolio">Portafolio</SLink>
 			</SLinks>
 		</SContainer>
 	)

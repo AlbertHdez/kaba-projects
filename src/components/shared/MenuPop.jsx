@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import theme from '../../themes/ClassicDark'
+import {Link} from 'react-router-dom';
 
 const MenuPop = props => {
 
@@ -26,12 +27,7 @@ const MenuPop = props => {
 		row-gap: 12px;
 		align-items: center;
 	`
-	const SLink = styled.a`
-		font-size: ${theme.font.subtitle.size};
-		font-weight: 400;
-		text-align: center;
-	`
-	const SLinkActive = styled.a`
+	const SLinkActive = css`
 		display: block;
 		width: 100%;
 		text-align: center;
@@ -42,6 +38,16 @@ const MenuPop = props => {
 		box-shadow: 0 2px 4px ${theme.palette.boxShadow};
 		border-radius: 10px;
 	`
+	const SLink = styled.a`
+		font-size: ${theme.font.subtitle.size};
+		font-weight: 400;
+		text-align: center;
+
+		&:hover, &:active{
+			${SLinkActive}
+		}
+	`
+	
 	const SSocial = styled.div`
 		display: flex; 
 
@@ -58,11 +64,9 @@ const MenuPop = props => {
 		<SContainer>
 			<STitle>Menú</STitle>
 			<SLinks>
-				<SLinkActive>Inicio</SLinkActive>
+				<SLink>Inicio</SLink>
 				<SLink>Portafolio</SLink>
-				<SLink>Contacto</SLink>
 			</SLinks>
-
 		</SContainer>
 	)
 }

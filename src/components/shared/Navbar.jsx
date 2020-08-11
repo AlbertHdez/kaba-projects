@@ -29,7 +29,7 @@ const Navbar = ({handleOnClick}) => {
 			cursor: pointer;
 		}
 	`
-	const SLink = styled.a`
+	const SLink = styled(Link)`
 		font-size: ${font.text.size};
 		color: ${palette.text};
 		font-weight: ${font.text.weight};
@@ -70,17 +70,11 @@ const Navbar = ({handleOnClick}) => {
 		<SContainer>
 			<SLogo>KABA</SLogo>
 			<SLinks>
-				<SLink>
+				<SLink to="/">
 					Inicio
 				</SLink>
-				<SLink>
-					Nosotros
-				</SLink>
-				<SLink>
+				<SLink to="/Portfolio">
 					Portafolio
-				</SLink>
-				<SLink>
-					Contacto
 				</SLink>
 			</SLinks>
 			<SIcon icon={menuIcon} onClick={handleOnClick}/>

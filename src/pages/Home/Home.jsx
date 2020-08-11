@@ -4,11 +4,19 @@ import PropTypes from 'prop-types'
 import DesktopContainer from './Versions/DesktopContainer'
 import MobileContainer from './Versions/MobileContainer'
 
+//Helpers
+import getKindaLayout from '../../helpers/getKindaLayout'
+
 const Home = props => {
 
-	return(
-		<DesktopContainer/>
-	)
+	const layout = getKindaLayout()
+
+		
+	if (layout === "desktop") {
+		return <DesktopContainer/>
+	}else if (layout === "mobile") {
+		return <MobileContainer/>
+	}
 }
 
 Home.propTypes = {

@@ -38,10 +38,12 @@ const MenuPop = props => {
 		box-shadow: 0 2px 4px ${theme.palette.boxShadow};
 		border-radius: 10px;
 	`
-	const SLink = styled.a`
+	const SLink = styled(Link)`
 		font-size: ${theme.font.subtitle.size};
 		font-weight: 400;
 		text-align: center;
+		color: ${theme.palette.text};
+		text-decoration: none;
 
 		&:hover, &:active{
 			${SLinkActive}

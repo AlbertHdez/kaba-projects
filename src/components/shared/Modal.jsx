@@ -12,25 +12,13 @@ const SContainer = styled.section`
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 20px;
-
-	& > *:nth-last-child(1){
-		z-index: 105;
-	}
-`
-const SBackground = styled.div`
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 101;
 	background-color: rgba(0,0,0,0.5);
 `
 
@@ -40,10 +28,7 @@ const Modal = ({isOpened, toggle, ...props}) => {
 			{
 				isOpened ? 
 					ReactDOM.createPortal(
-						<SContainer>
-							<SBackground onClick={toggle}/>
-							{props.children}
-						</SContainer>,
+						<SContainer onClick={toggle}>{props.children}</SContainer>,
 						modalContainer
 					)
 				: null

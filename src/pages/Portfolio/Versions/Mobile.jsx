@@ -16,6 +16,10 @@ import facebookIcon from '@iconify/icons-mdi/facebook'
 import linkedinIcon from '@iconify/icons-mdi/linkedin'
 import twitterIcon from '@iconify/icons-mdi/twitter'
 import instagramIcon from '@iconify/icons-mdi/instagram'
+import HeaderImage from '../../../media/images/mobile-portfolio.jpg'
+import CtaImage from '../../../media/images/cta-mobile.jpg'
+
+import images from '../../../media/images/portfolio/images'
 
 const Mobile = ({modal}) => {
 
@@ -24,15 +28,14 @@ const Mobile = ({modal}) => {
 	const SContainer = styled.section`
 		display: grid;
 		grid-template-rows: calc(100vh + 30px) auto 100vh;
-		row-gap: 100px;
 		background-color: ${palette.containerDark};
 	`
 	const SGallery = styled.section`
 		display: grid;
 		row-gap: 20px;
 		padding: 0 20px;
+		margin: 100px 0px;
 	`
-
 	const SFooter = styled.footer`
 		padding:36px 16px;
 	`
@@ -40,7 +43,9 @@ const Mobile = ({modal}) => {
 	return (
 		<SContainer>
 			<HeaderCover
-					title={"Convirtiendo ideas en realidad"}
+					image = {HeaderImage}
+					author = {"Photo by You X Ventures on Unsplash"}
+					title = {"Convirtiendo ideas en realidad"}
 					button={{
 						text: "Contactanos",
 						link: "https://facebook.com"
@@ -67,12 +72,14 @@ const Mobile = ({modal}) => {
 					handleMenuClick={modal.toggle}
 				/>
 				<SGallery>
-					<MobileImage/>
-					<MobileImage/>
-					<MobileImage/>
-					<MobileImage/>
-					<MobileImage/>
-					<MobileImage/>
+					{
+						images.map((image, key)=> (
+							<MobileImage
+								key={key} 
+								img={image}
+							/>
+						))
+					}
 				</SGallery>
 				<CTAImage
 					title={"¿Listo para comenzar a desarrollar tu idea?"}
@@ -81,6 +88,7 @@ const Mobile = ({modal}) => {
 						text: "Contactanos"
 						}}
 					isMobile={true}
+					img={CtaImage}
 				/>
 				<SFooter>
 					<Footer

@@ -47,7 +47,7 @@ const HeaderSection = ({align, titles, section, ...props}) => {
     	<SChip>{section}</SChip>
     	<STitle>
     		{
-    			titles.map(title => <React.Fragment>{title}<br/></React.Fragment>)
+    			titles.map((title, key) => <React.Fragment key={key}>{title}<br/></React.Fragment>)
     		}
     	</STitle>
     	<SContent>

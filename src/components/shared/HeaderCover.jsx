@@ -7,14 +7,14 @@ import IconLink from './IconLink'
 import Navbar from './Navbar'
 import Button from './Button'
 
-const HeaderCover = ({title, socialLinks, button, handleMenuClick}) => {
+const HeaderCover = ({title, socialLinks, button, image, handleMenuClick, author}) => {
 
 	const {palette, font} = theme;
 
 	const SContainer = styled.section`
 		width: 100%;
 		height: 100%;
-		background-image: url(https://picsum.photos/500/650);
+		background-image: url(${image});
 		background-size: cover;
 
 		border-radius: 0px 0px 15px 15px;
@@ -93,18 +93,22 @@ const HeaderCover = ({title, socialLinks, button, handleMenuClick}) => {
 				}
 				<div>
 					{
-			            socialLinks.map(link => (
-			              <IconLink color="white" icon={link.icon} link={link.href} size={"28px"}/>
+			            socialLinks.map((link, key) => (
+			              <IconLink key={key} color="white" icon={link.icon} link={link.href} size={"28px"}/>
 			             ))
 	        		}
 				</div>
 			</STitle>
 			<SAuthor>
-				<p>Ponle los creditos a la imagen</p>
+				<p>{author}</p>
 			</SAuthor>
 			</SWrapper>
 		</SContainer>
 	)
+}
+
+HeaderCover.defaultProps = {
+	image : "https://picsum.photos/500/650"
 }
 
 HeaderCover.propTypes = {

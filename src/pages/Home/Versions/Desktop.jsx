@@ -27,6 +27,10 @@ import facebookIcon from '@iconify/icons-mdi/facebook'
 import linkedinIcon from '@iconify/icons-mdi/linkedin'
 import twitterIcon from '@iconify/icons-mdi/twitter'
 import instagramIcon from '@iconify/icons-mdi/instagram'
+import HeaderImage from '../../../media/images/desktop-home.jpg'
+import CtaImage from '../../../media/images/cta-desktop.jpg'
+import AboutImage from '../../../media/images/about.jpg'
+import MeImage from '../../../media/images/me.jpg'
 
 const Desktop = props => {
 	const {palette, font} = theme
@@ -44,7 +48,6 @@ const Desktop = props => {
 		max-width: 1100px;
 		display: grid;
 		justify-items: center;
-		row-gap: 120px;
 	`
 
 	const SHeader = styled.header`
@@ -66,6 +69,7 @@ const Desktop = props => {
 		display: grid;
 		row-gap: 50px;
 		justify-items: center;
+		margin: 120px 0;
 
 		& > *:nth-child(2){
 			display: grid;
@@ -94,6 +98,7 @@ const Desktop = props => {
 		border-radius: 20px;
 		box-shadow: 0 3px 6px ${palette.boxShadow};
 		padding: 100px 0px;
+		margin: 120px 0;
 
 		& > *:nth-child(2){
 			display: grid;
@@ -110,6 +115,7 @@ const Desktop = props => {
 	`
 	const SCTA = styled.section`
 		width: 100%;
+		margin: 120px 0 50px 0;
 	`
 	const SFooter = styled.section`
 		width: 100%;
@@ -125,6 +131,10 @@ const Desktop = props => {
 					</section>
 					<HeaderCard 
 						title={"Convirtiendo ideas en realidad"}
+						button={{
+							text: "Contactanos",
+							link: "https://facebook.com"
+						}}
 						socialLinks = {[
 							{
 								href: "https://www.facebook.com/MarioHdezDev",
@@ -143,6 +153,8 @@ const Desktop = props => {
 								icon: linkedinIcon
 							}
 						]}
+						img = {HeaderImage}
+						author = {"Photo by Guido Hofmann on Unsplash"}
 					/>
 				</SHeader>
 				<SHWW>
@@ -176,7 +188,9 @@ const Desktop = props => {
 					</section>
 				</SHWW>
 				<SWhatWeDo>
-					<ImageSection/>
+					<ImageSection
+						src={AboutImage}
+					/>
 					<HeaderSection 
 						titles={["¿Qué es KABA?","¿Que es lo que hacemos?","¿Por qué lo hacemos?"]}
 						section={"Sobre Nosotros"}
@@ -216,15 +230,20 @@ const Desktop = props => {
 				</SServices>
 				<SQuote>
 					<Quote/>
-					<ImageSection/>
+					<ImageSection
+						src={MeImage}
+					/>
 				</SQuote>
-				<CTAImage
-					title={"¿Listo para comenzar a desarrollar tu idea?"}
-					text={"Contactanos para que platiquemos y comencemos con tu proyecto"}
-					button={{
-						text: "Contactanos"
-						}}
-				/>
+				<SCTA>
+					<CTAImage
+						title={"¿Listo para comenzar a desarrollar tu idea?"}
+						text={"Contactanos para que platiquemos y comencemos con tu proyecto"}
+						button={{
+							text: "Contactanos"
+							}}
+						img = {CtaImage}
+					/>
+				</SCTA>
 				<SFooter>
 					<Footer
 						socialLinks = {[

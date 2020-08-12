@@ -28,6 +28,10 @@ import facebookIcon from '@iconify/icons-mdi/facebook'
 import linkedinIcon from '@iconify/icons-mdi/linkedin'
 import twitterIcon from '@iconify/icons-mdi/twitter'
 import instagramIcon from '@iconify/icons-mdi/instagram'
+import HeaderImage from '../../../media/images/mobile-home.jpg'
+import AboutImage from '../../../media/images/about.jpg'
+import CtaImage from '../../../media/images/cta-mobile.jpg'
+import MeImage from '../../../media/images/me.jpg'
 
 const Mobile = ({modal}) => {
 	const {palette, font} = theme
@@ -96,6 +100,8 @@ const Mobile = ({modal}) => {
 		<SContainer>
 			<SHeader>
 				<HeaderCover
+					image = {HeaderImage}
+					author = "Photo by AltumCode on Unsplash"
 					title={"Convirtiendo ideas en realidad"}
 					button={{
 						text: "Contactanos",
@@ -158,7 +164,7 @@ const Mobile = ({modal}) => {
 				</div>
 			</SHowWeWork>
 			<SAbout>
-				<ImageSection isFull={true}/>
+				<ImageSection isFull={true} src={AboutImage}/>
 				<HeaderSection 
 					titles={["¿Qué es KABA?","¿Que es lo que hacemos?","¿Por qué lo hacemos?"]}
 					section={"Sobre Nosotros"}
@@ -208,6 +214,7 @@ const Mobile = ({modal}) => {
 						text: "Contactanos"
 						}}
 					isMobile={true}
+					img={CtaImage}
 				/>
 			</SCTA>
 			<SFooter>

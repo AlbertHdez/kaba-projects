@@ -16,7 +16,7 @@ import whatsappIcon from '@iconify/icons-mdi/whatsapp'
 //Media
 
 
-const HeaderCard = ({title, socialLinks, button}) =>{
+const HeaderCard = ({title, socialLinks, button, img, author}) =>{
 
   //Styles
   const SContainer = styled.div`
@@ -28,10 +28,10 @@ const HeaderCard = ({title, socialLinks, button}) =>{
       box-shadow: 0 3px 6px ${theme.palette.boxShadow};
   `
   const SImageBg = styled.img`
-    width: 120%;
+    width: 100%;
     position: absolute;
-    top: -10%;
-    left: -10%;
+    top: 0;
+    left: 0;
     z-index: 2;
   `
   const SWrapper = styled.div`
@@ -97,7 +97,7 @@ const HeaderCard = ({title, socialLinks, button}) =>{
 
   return(
     <SContainer>
-      <SImageBg src='https://images.pexels.com/photos/1181275/pexels-photo-1181275.jpeg'/>
+      <SImageBg src={img}/>
       <SWrapper>
         <SHeader>
           <h1>
@@ -117,7 +117,7 @@ const HeaderCard = ({title, socialLinks, button}) =>{
           }
         </SSocial>
         <SAuthor>
-          <span>Pon los creditos del autor wey</span>
+          <span>{author}</span>
         </SAuthor>
       </SWrapper>
     </SContainer>
@@ -135,7 +135,8 @@ HeaderCard.defaultProps = {
       icon: facebookIcon,
       href: "https://facebook.com"
     }
-  ]
+  ],
+  img: 'https://picsum.photos/1200/800'
 }
 
 export default HeaderCard

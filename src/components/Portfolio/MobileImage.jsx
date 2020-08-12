@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import theme from '../../themes/ClassicDark'
 
-const MobileImage = ({src}) => {
+const MobileImage = ({img}) => {
 
 	const SImage = styled.img`
 		width: 100%;
@@ -12,12 +12,12 @@ const MobileImage = ({src}) => {
 	`
 
 	return (
-		<SImage src={src}/>
+		<SImage src={`${img}`}/>
 	)
 }
 
 MobileImage.defaultProps = {
-	src: "https://picsum.photos/id/350/400"
+	img: "https://picsum.photos/id/350/400"
 }
 
 MobileImage.propTypes = {

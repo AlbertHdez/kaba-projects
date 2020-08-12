@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import theme from '../../themes/ClassicDark'
 
-const Image = (props) => {
+const Image = ({img}) => {
 	
-	const SContainer = styled.image`
+	const SContainer = styled.div`
 		width: 100%;
 		height: 400px;
-		background-image: url(https://picsum.photos/id/350/400);
+		background-image: url("${img}");
 		background-size: cover;
 		background-position: center;
 		border-radius: 15px;
@@ -20,6 +20,10 @@ const Image = (props) => {
 			
 		</SContainer>
 	)
+}
+
+Image.defaultProps = {
+	img: "https://picsum.photos/id/350/400"
 }
 
 Image.propTypes = {

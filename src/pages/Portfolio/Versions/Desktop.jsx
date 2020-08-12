@@ -15,6 +15,10 @@ import facebookIcon from '@iconify/icons-mdi/facebook'
 import linkedinIcon from '@iconify/icons-mdi/linkedin'
 import twitterIcon from '@iconify/icons-mdi/twitter'
 import instagramIcon from '@iconify/icons-mdi/instagram'
+import HeaderImage from '../../../media/images/desktop-portfolio.jpg'
+import CtaImage from '../../../media/images/cta-desktop.jpg'
+
+import images from '../../../media/images/portfolio/images'
 
 const Desktop = props => {
 	const {palette, font} = theme
@@ -32,7 +36,6 @@ const Desktop = props => {
 		max-width: 1100px;
 		display: grid;
 		justify-items: center;
-		row-gap: 120px;
 	`
 
 	const SHeader = styled.header`
@@ -51,14 +54,15 @@ const Desktop = props => {
 	const SFooter = styled.section`
 		width: 100%;
 		max-width: 990px;
+		margin-top: 50px;
 	`
 	const SPortfolio = styled.section`
 		display: grid;
 		width: 100%;
-		max-width: 990px;
-		grid-template-columns: repeat(3, 1fr);
-		column-gap: 24px;
-		row-gap: 24px; 
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 10px;
+		row-gap: 10px; 
+		margin: 100px 0px;
 	`
 	const SSpace = styled.div`
 		width: 100%;
@@ -78,6 +82,10 @@ const Desktop = props => {
 					</section>
 					<HeaderCard 
 						title={"Convirtiendo ideas en realidad"}
+						button={{
+							text: "Contactanos",
+							link: "https://facebook.com"
+						}}
 						socialLinks = {[
 							{
 								href: "https://www.facebook.com/MarioHdezDev",
@@ -96,19 +104,19 @@ const Desktop = props => {
 								icon: linkedinIcon
 							}
 						]}
+						img = {HeaderImage}
+						author = {"Photo by Amélie Mourichon on Unsplash"}
 					/>
 				</SHeader>
 				<SPortfolio>
-					<Image/>
-					<Image/>
-					<Image/>
-					<Image/>
-					<Image/>
-					<Image/>
-					<Image/>
-					<Image/>
-					<Image/>
-					<Image/>
+					{
+						images.map((image, key)=> (
+							<Image
+								key={key} 
+								img={image}
+							/>
+						))
+					}
 				</SPortfolio>
 				<CTAImage
 					title={"¿Listo para comenzar a desarrollar tu idea?"}
@@ -116,6 +124,7 @@ const Desktop = props => {
 					button={{
 						text: "Contactanos"
 						}}
+					img = {CtaImage}
 				/>
 				<SFooter>
 					<Footer

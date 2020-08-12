@@ -43,8 +43,8 @@ const Footer = ({socialLinks}) => {
 			<SBrand>KABA 2020</SBrand>
 			<SLinks>
 				{
-		            socialLinks.map(link => (
-		              <IconLink color={palette.text} icon={link.icon} link={link.href}/>
+		            socialLinks.map((link, key) => (
+		              <IconLink key={key} color={palette.text} icon={link.icon} link={link.href}/>
 	              	))
 	          	}
 			</SLinks>
